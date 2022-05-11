@@ -46,34 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.cs">
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSzerzo.cs">
+    <Compile Include="FrmSzerzo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSzerzo.Designer.cs">
-      <DependentUpon>frmSzerzo.cs</DependentUpon>
+    <Compile Include="FrmSzerzo.Designer.cs">
+      <DependentUpon>FrmSzerzo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSzerzoLista.cs">
+    <Compile Include="FrmSzerzoLista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSzerzoLista.Designer.cs">
-      <DependentUpon>frmSzerzoLista.cs</DependentUpon>
+    <Compile Include="FrmSzerzoLista.Designer.cs">
+      <DependentUpon>FrmSzerzoLista.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSzerzo.resx">
-      <DependentUpon>frmSzerzo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmSzerzo.resx">
+      <DependentUpon>FrmSzerzo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSzerzoLista.resx">
-      <DependentUpon>frmSzerzoLista.cs</DependentUpon>
+    <EmbeddedResource Include="FrmSzerzoLista.resx">
+      <DependentUpon>FrmSzerzoLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

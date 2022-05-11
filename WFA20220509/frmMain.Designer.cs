@@ -1,6 +1,6 @@
 ﻿namespace WFA20220509
 {
-    partial class frmMain
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,9 @@
             this.lcount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgw1 = new System.Windows.Forms.DataGridView();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Isz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.szerkesztésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -43,14 +45,12 @@
             this.forrásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idézetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keresésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Isz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgw2 = new System.Windows.Forms.DataGridView();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.SuspendLayout();
             // 
             // label_idezet
@@ -109,21 +109,31 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Az idézetek száma szerzők szerint:";
             // 
-            // dgw1
+            // dgv1
             // 
-            this.dgw1.AllowUserToAddRows = false;
-            this.dgw1.AllowUserToDeleteRows = false;
-            this.dgw1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgw1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv1.AllowUserToAddRows = false;
+            this.dgv1.AllowUserToDeleteRows = false;
+            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tema,
             this.Isz});
-            this.dgw1.Location = new System.Drawing.Point(29, 188);
-            this.dgw1.Name = "dgw1";
-            this.dgw1.RowHeadersVisible = false;
-            this.dgw1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgw1.Size = new System.Drawing.Size(273, 226);
-            this.dgw1.TabIndex = 6;
+            this.dgv1.Location = new System.Drawing.Point(29, 188);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.RowHeadersVisible = false;
+            this.dgv1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv1.Size = new System.Drawing.Size(273, 226);
+            this.dgv1.TabIndex = 6;
+            // 
+            // tema
+            // 
+            this.tema.HeaderText = "Téma";
+            this.tema.Name = "tema";
+            // 
+            // Isz
+            // 
+            this.Isz.HeaderText = "Idézetek száma";
+            this.Isz.Name = "Isz";
             // 
             // menuStrip1
             // 
@@ -162,7 +172,7 @@
             // szerzőToolStripMenuItem
             // 
             this.szerzőToolStripMenuItem.Name = "szerzőToolStripMenuItem";
-            this.szerzőToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.szerzőToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.szerzőToolStripMenuItem.Text = "Szerző";
             this.szerzőToolStripMenuItem.Click += new System.EventHandler(this.szerzőToolStripMenuItem_Click);
             // 
@@ -193,31 +203,21 @@
             this.keresésToolStripMenuItem.Text = "Keresés";
             this.keresésToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // tema
+            // dgv2
             // 
-            this.tema.HeaderText = "Téma";
-            this.tema.Name = "tema";
-            // 
-            // Isz
-            // 
-            this.Isz.HeaderText = "Idézetek száma";
-            this.Isz.Name = "Isz";
-            // 
-            // dgw2
-            // 
-            this.dgw2.AllowUserToAddRows = false;
-            this.dgw2.AllowUserToDeleteRows = false;
-            this.dgw2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgw2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv2.AllowUserToAddRows = false;
+            this.dgv2.AllowUserToDeleteRows = false;
+            this.dgv2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dgw2.Location = new System.Drawing.Point(345, 188);
-            this.dgw2.Name = "dgw2";
-            this.dgw2.RowHeadersVisible = false;
-            this.dgw2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgw2.Size = new System.Drawing.Size(273, 226);
-            this.dgw2.TabIndex = 9;
+            this.dgv2.Location = new System.Drawing.Point(345, 188);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.RowHeadersVisible = false;
+            this.dgv2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv2.Size = new System.Drawing.Size(273, 226);
+            this.dgv2.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -234,8 +234,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 426);
-            this.Controls.Add(this.dgw2);
-            this.Controls.Add(this.dgw1);
+            this.Controls.Add(this.dgv2);
+            this.Controls.Add(this.dgv1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lcount);
@@ -247,10 +247,10 @@
             this.Name = "frmMain";
             this.Text = "Idézetgyűjtemény ";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgw1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,7 +264,7 @@
         private System.Windows.Forms.Label lcount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgw1;
+        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem szerkesztésToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -275,7 +275,7 @@
         private System.Windows.Forms.ToolStripMenuItem keresésToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn tema;
         private System.Windows.Forms.DataGridViewTextBoxColumn Isz;
-        private System.Windows.Forms.DataGridView dgw2;
+        private System.Windows.Forms.DataGridView dgv2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }

@@ -11,10 +11,11 @@ using System.Windows.Forms;
 
 namespace WFA20220509
 {
-    public partial class frmMain : Form
+    public partial class FrmMain : Form
     {
+        //Csatlakozás az adatbázishoz. 
         public string ConnectionString { private get; set; }
-        public frmMain()
+        public FrmMain()
         {
             ConnectionString = "Server = (localdb)\\MSSQLLocalDB;" +
                                "Database = idezetek;";
@@ -32,7 +33,6 @@ namespace WFA20220509
             ldatum.Text = DateTime.Now.ToString("yyyy. MMM dd.");
             a();
         }
-
         private void a() 
         {
             using (var c = new SqlConnection(ConnectionString))
@@ -63,7 +63,7 @@ namespace WFA20220509
                     "ORDER BY t.megnevezes; ", c).ExecuteReader();
                 while (r3.Read()) 
                 {
-                    dgw1.Rows.Add(
+                    dgv1.Rows.Add(
                        r3[0],
                        r3[1]
                         );
@@ -80,20 +80,60 @@ namespace WFA20220509
                     "ORDER BY sz.nev; ", c).ExecuteReader();
                 while (r4.Read())
                 {
-                    dgw2.Rows.Add(
+                    dgv2.Rows.Add(
+                       r4[0],
+                       r4[1]
+                        );
+                }
+                r4.Close();
+            }
+            
+        }
+        //DGV frissítése
+        private void dgvsrefresh()
+        {
+            using (var c = new SqlConnection(ConnectionString))
+            {
+                c.Open();
+                var r3 = new SqlCommand(
+                   "SELECT t.megnevezes, COUNT(i.idezetID) " +
+                   "FROM tema t LEFT JOIN utalas u ON t.temaID = u.temaID " +
+                   "LEFT JOIN idezet i ON u.idezetID = i.idezetID " +
+                   "GROUP BY t.megnevezes " +
+                   "ORDER BY t.megnevezes; ", c).ExecuteReader();
+                while (r3.Read())
+                {
+                    dgv1.Rows.Add(
+                       r3[0],
+                       r3[1]
+                        );
+                }
+                r3.Close();
+
+                var r4 = new SqlCommand(
+                    "SELECT sz.nev, COUNT(i.forrasID) " +
+                    "FROM szerzo sz LEFT JOIN forras f ON sz.szerzoID = f.szerzoID " +
+                    "LEFT JOIN idezet i ON f.forrasID = i.forrasID " +
+                    "GROUP BY sz.nev " +
+                    "HAVING COUNT(i.forrasID) > 0 " +
+                    "ORDER BY sz.nev; ", c).ExecuteReader();
+                while (r4.Read())
+                {
+                    dgv2.Rows.Add(
                        r4[0],
                        r4[1]
                         );
                 }
             }
-            
         }
+
 
         //Másik form ablak megnyitása.
         private void szerzőToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSzerzo f = new frmSzerzo();
+            FrmSzerzo f = new FrmSzerzo();
             f.Show();
         }
+
     }
 }
